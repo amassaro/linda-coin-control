@@ -4,9 +4,6 @@ require './vendor/autoload.php';
 use Noodlehaus\Config;
 use PHPMailer\PHPMailer;
 
-
-
-
 $conf = Config::load('./config.json');
 
 $linda_path = $conf->get('linda_path', '/usr/local/bin/Lindad') ?? '/usr/local/bin/Lindad';
@@ -37,7 +34,6 @@ if (empty($to_address)) {
 
 // The Wallet ID Where Your Coins Are (Usually 0)
 $wallet_id = $conf->get('wallet_id', '0') ?? '0';
-
 
 // Notify Email Address (Leave Blank For No Notifications)
 $notify_address = $conf->get('notify_email');
@@ -87,7 +83,6 @@ CREATE TABLE `linda_transactions` (
 	MODIFY `id` int(11) NOT NULL AUTO_INCREMENT; COMMIT;
 EOD;
 
-
 /////////////////////////////////////
 // End Settings (Do Not Change Below)
 /////////////////////////////////////
@@ -115,19 +110,21 @@ if (array_key_exists('install', $opts)) {
 		die("PDO MySQL failed: " . $e->getMessage());
 	}
 	exit;
+
 }
 
 try {
+
 	$pdo = new PDO($dsn, $db_user, $db_pass, $opt);
 	$pdo->exec($sql_script);
-
 	echo "$db_name has been created! Coin control script is ready to run.";
 
 	exit;
 
 } catch (Exception $e) {
-
+	
 	die($e->getMessage());
+
 }
 
 // Let's Only Run The Coin Control If Needed
