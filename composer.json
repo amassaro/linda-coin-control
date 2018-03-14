@@ -1,0 +1,9 @@
+{
+    "name": "amassaro/linda-coin-control",
+    "description": "Coin control script for Linda Coin wallet.",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.0",
+        "hassankhan/config": "^1.0"
+    }
+}
