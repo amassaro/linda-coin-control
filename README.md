@@ -60,7 +60,7 @@ php linda_coin_control.php --install
     <dt>Chris' Wallet Address</dt>
     <dd>LQJ6aShBPDieLcYUZerkhrChefqMTLvR8c</dd>
     <dt>My Wallet Address</dt>
-    <dd>LM7jCQJiphPE2ecius53nFBBVFBKnDUaN2</dd>
+    <dd>Li1VayEzgTmMup7txFtw6CPRzGQyRuY1bm</dd>
 </dl>
 
 ### Linda Coin Discord
